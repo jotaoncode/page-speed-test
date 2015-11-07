@@ -12,12 +12,10 @@ You will find you have folder before and one after. The main reason is that I wa
 
 Run the following command:
 
-```bash
 $ npm install
 
 Then just run
 
-```bash
 $ grunt pagespeed
 
 ## Results
