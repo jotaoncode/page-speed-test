@@ -1,0 +1,16 @@
+{
+  "name": "PageSpeedInsights",
+  "version": "0.0.1",
+  "description": "Will test before and after performance measure",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "material-design-icons": "^2.0.0",
+    "materialize-css": "^0.97.1",
+    "q": "^1.4.1",
+    "underscore": "^1.8.3"
+  }
+}
