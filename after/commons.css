@@ -1,9 +1,0 @@
-html, body, article, section{
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-body > .container {
-  margin: 0;
-  padding: 0;
-}

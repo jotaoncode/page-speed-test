@@ -37,7 +37,7 @@ module.exports = function(grunt) {
       type: 'uglifyjs',
       fileIn: fileIn,
       tempPath: './.tmp/',
-      fileOut: './dist/js/' + fileOut,
+      fileOut: './after/js/' + fileOut,
       callback: function (err) {
         if (err) {
           console.log('Uglifyjs Something goes wrong: ' + err);
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
       type: 'yui-css',
       fileIn: fileIn,
       tempPath: './.tmp/',
-      fileOut: './dist/css/' + fileOut,
+      fileOut: './after/css/' + fileOut,
       callback: function (err) {
         if (err) {
           console.log('YUI-CSS Something goes wrong: ' + err);
@@ -86,11 +86,10 @@ module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('production', [
+  grunt.registerTask('default', [
     'minify:css:vendors',
     'minify:css:app',
     'minify:js:vendors',
-    'minify:js:app',
-    'responsive_images:all'
+    'minify:js:app'
   ]);
 };
