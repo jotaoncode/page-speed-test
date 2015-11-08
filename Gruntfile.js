@@ -2,7 +2,7 @@ var Compressor = require('node-minify');
 module.exports = function(grunt) {
   grunt.initConfig({
     responsive_images: {
-      pizza: {
+      all: {
         options: {
           engine: 'im',
           sizes: [{
@@ -20,21 +20,13 @@ module.exports = function(grunt) {
     pagespeed: {
       options: {
         nokey: true,
-        url: "https://nano-degree-performance.herokuapp.com/dist/",
-      },
-      prod: {
-        options: {
-          url: "https://nano-degree-performance.herokuapp.com/dist/",
-          locale: "en_GB",
-          strategy: "desktop",
-          threshold: 80
-        }
+        url: "https://jotaoncode.herokuapp.com/news/optimizations/pagespeed/test/",
       },
       paths: {
         options: {
-          paths: ["/", "/project-2048.html", "/project-webperf.html", "/project-mobile.html", "/pizza.html"],
+          paths: ["/before/index.html", "/after/index.html"],
           locale: "en_GB",
-          strategy: "desktop",
+          strategy: "mobile",
           threshold: 80
         }
       }
@@ -77,7 +69,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('minify:css:app', function () {
-    compressCss(['./after/styles.css'], 'pizza.css');
+    compressCss(['./after/styles.css'], 'app-production.css');
   });
 
   grunt.registerTask('minify:js:vendors', function () {
@@ -92,7 +84,6 @@ module.exports = function(grunt) {
     minifyJs(['./after/app.js'], 'app-production.js');
   });
 
-
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('production', [
@@ -100,6 +91,6 @@ module.exports = function(grunt) {
     'minify:css:app',
     'minify:js:vendors',
     'minify:js:app',
-    'responsive_images:pizza'
+    'responsive_images:all'
   ]);
 };
