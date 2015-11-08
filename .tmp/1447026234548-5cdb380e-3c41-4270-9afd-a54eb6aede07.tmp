@@ -1,0 +1,9 @@
+.col {
+  height: 100%;
+}
+.images-container .col{
+  text-align: center;
+}
+.pizzeria {
+  max-width: 160px;
+}
