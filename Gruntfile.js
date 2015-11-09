@@ -11,8 +11,8 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: ['before/pizza.jpg'],
-          cwd: 'img',
+          src: ['pizzeria.jpg'],
+          cwd: './before/',
           dest: 'after'
         }]
       }
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('minify:css:app', function () {
-    compressCss(['./after/styles.css'], 'app-production.css');
+    compressCss(['./before/styles.css'], 'app-production.css');
   });
 
   grunt.registerTask('minify:js:vendors', function () {
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('minify:js:app', function () {
-    minifyJs(['./after/app.js'], 'app-production.js');
+    minifyJs(['./before/app.js'], 'app-production.js');
   });
 
   require('load-grunt-tasks')(grunt);
@@ -90,6 +90,7 @@ module.exports = function(grunt) {
     'minify:css:vendors',
     'minify:css:app',
     'minify:js:vendors',
-    'minify:js:app'
+    'minify:js:app',
+    'responsive_images:all'
   ]);
 };
