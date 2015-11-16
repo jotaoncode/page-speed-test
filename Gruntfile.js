@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: ['pizzeria.jpg'],
+          src: ['pizzeria.jpg', 'me.png', 'image.png'],
           cwd: './before/',
           dest: 'after'
         }]
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
     pagespeed: {
       options: {
         nokey: true,
-        url: "https://jotaoncode.herokuapp.com/news/optimizations/pagespeed/test/",
+        url: "https://jotaoncode.herokuapp.com/pagespeedtest",
       },
       paths: {
         options: {
