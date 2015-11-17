@@ -6,7 +6,10 @@ module.exports = function(grunt) {
         options: {
           engine: 'im',
           sizes: [{
-            width: 160
+            width: 73
+          }, {
+            width: 160,
+            quality: 50
           }]
         },
         files: [{
@@ -27,7 +30,7 @@ module.exports = function(grunt) {
           paths: ["/before/index.html", "/after/index.html"],
           locale: "en_GB",
           strategy: "mobile",
-          threshold: 80
+          threshold: 65
         }
       }
     }
