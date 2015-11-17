@@ -24,13 +24,14 @@ module.exports = function(grunt) {
       options: {
         nokey: true,
         url: "https://jotaoncode.herokuapp.com/pagespeedtest",
+        threshold: 90
       },
       paths: {
         options: {
           paths: ["/before/index.html", "/after/index.html"],
           locale: "en_GB",
-          strategy: "mobile",
-          threshold: 65
+          strategy: "desktop",
+          threshold: 90
         }
       }
     }
@@ -67,7 +68,7 @@ module.exports = function(grunt) {
   }
   grunt.registerTask('minify:css:vendors', function () {
     compressCss([
-      './node_modules/materialize-css/bin/materialize.css'
+      './node_modules/materialize-css/dist/css/materialize.min.css'
     ], 'vendors.css');
   });
 
@@ -76,10 +77,10 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('minify:js:vendors', function () {
-    minifyJs(['./node_modules/jquery/dist/jquery.js',
-      './node_modules/underscore/underscore.js',
+    minifyJs(['./node_modules/jquery/dist/jquery.min.js',
+      './node_modules/underscore/underscore-min.js',
       './node_modules/q/q.js',
-      './node_modules/materialize-css/bin/materialize.js'
+      './node_modules/materialize-css/dist/js/materialize.min.js'
       ], 'vendors.js');
   });
 
